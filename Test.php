@@ -14,5 +14,4 @@
 
     echo "<pre>";
     print_r($my_arr);
-    print_r($my_arr);
     echo "</pre>";
