@@ -1,42 +1,27 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" method="get">
-        <label>
-            <input type="text" name="text" value="asd">
-        </label>
-        <label>
-            <input type="email" name="email" value="asdsd@asds">
-        </label>
-        <input type="submit">
-    </form>
+<?php
 
-    <?php
+//    $sum = 0;
+//    for ($i = 1; $i <= 112; $i += 3)
+//    {
+//        $sum += $i;
+//    }
+//    echo "Sum = $sum";
 
-    print_r($_GET);
-    echo "</br>";
+echo "<table border='1'>";
+    for ($i = 1; $i < 10; $i++)
+    {
+        echo "<tr>";
+        for ($j = 1; $j < 10; $j++)
+        {
+            echo "<td>".$i * $j."</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
 
-    echo "<pre>";
-    print_r($_SERVER);
-    echo "</pre>";
-//        $my_arr = array("Ukraine" => "Kiev",
-//            "Russia" => "Moscow",
-//            "USA" => "Washington",
-//            "Italy" => "Rome",
-//            "France" => "Paris");
+//$arr = array('PHP', 'One', 'Two');
 //
-//            echo "<pre>";
-//            print_r($my_arr);
-//            echo "</pre>";
-    ?>
-</body>
-</html>
-
-
+//foreach ($arr as $k => $value)
+//{
+//    echo $k." = ".$value."<br>";
+//}
