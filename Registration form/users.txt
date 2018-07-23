@@ -1,2 +1,0 @@
-a:3:{s:4:"name";s:6:"Kostya";s:5:"email";s:14:"Kbelyi@ukr.net";s:5:"phone";s:5:"34956";}
-a:3:{s:4:"name";s:3:"dgg";s:5:"email";s:5:"gd!@v";s:5:"phone";s:4:"dgvs";}

@@ -1,0 +1,57 @@
+<html>
+
+    <meta charset="utf-8">
+
+    <body>
+        <script type="text/javascript">
+
+            var text_error = '';
+            var fio, pol, age, email;
+            var check = false;
+
+            while (!check) {
+                do{
+                    if (text_error) {
+                        alert(text_error);
+                        text_error = '';
+                    }
+
+                    fio = prompt("Введите Ф.И.О.:", "Иванов И.И.");
+
+                    pol = prompt("Ваш пол:", "м");
+                    switch(pol){
+                        case 'м': break;
+                        case 'ж': break;
+                        case null: break;
+                        default:
+                            text_error += "Не правильный пол; ";
+                    }
+
+                    age = prompt("Ваш возраст:", 20);
+                    if (isNaN(age)) {
+                        text_error += "Возраст не число; ";
+                    }
+
+
+                    email = prompt("Введите E-mail:", "exampl@exampl.com");
+
+                }
+                while(text_error)
+
+                check = confirm(
+                    "Ф.И.О: "+fio+"\n"+
+                    "Пол: "+pol+"\n"+
+                    "Возраст: "+age+"\n"+
+                    "E-mail: "+email+"\n\n"+
+                    "Все верно?"
+                    );
+
+                if(check) {
+                    alert("Спасибо за ваши данные =)");
+                }
+
+            }
+
+	</script>
+    </body>
+</html>
