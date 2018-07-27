@@ -13,20 +13,56 @@ and open the template in the editor.
             //объект Test
             function Test(t_questions, t_answers){
                 //вопросы
-                this.questions = t_questions;
+                this.quest = t_questions;
+
+                this.len = this.quest.length;
                 //правильные ответы
-                this.answers = t_answers;
+                this.ans = t_answers;
                 //очки
                 this.point = 0;
 
-                this.getQuest = testQuest;
+                this.showQuest = showQuest;
 
-                
+                this.validate = validate;
+
+                this.run = testRun;
+
+                this.out = out;
 
                 return this;
             }
 
+            function showQuest(q) {
 
+                var answer;
+                answer = confirm(q);
+
+                return answer;
+            }
+
+            function validate(v_answer, res){
+
+                if (res == v_answer) {
+
+                    this.point++;
+                }
+            }
+
+            function testRun(){
+
+                for (var i = 0; i < this.len; i++) {
+
+                    var result = this.showQuest(this.quest[i]);
+
+                    this.validate(this.ans[i], result);
+                }
+
+                this.out();
+            }
+
+            function out(){
+                alert("Point -> " + this.point);
+            }
 
 
         </script>
@@ -46,8 +82,10 @@ and open the template in the editor.
                 false,
                 false
             ];
-            //очки
-            var point;
+
+
+            var t = new Test(test_questions,test_answers);
+            t.run();
 
         </script>
     </body>
