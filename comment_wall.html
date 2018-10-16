@@ -4,32 +4,81 @@
     <meta charset="utf-8">
 
     <body>
+        <div id='wall'></div>
 
-        <div id='block-1'>Block #1</div>
-        <div id='block-2'>Block #2</div>
-        <input type='button' value='add' onclick="test();">
-        <input type='button' value='remove' onclick='test2(); '>
-
+        <input id="ent" type="text" name="comment">
+        <input type='button' value='add' onclick="addComment();">
+        <input type="button" value="marker" onclick="changeColor();">
+        
     </body>
     <script>
+        var text;
+        var element_wall;
+        var element_marker;
+        var div_comment;
+        var id_iter = 0;
+        var color = 'black';
 
-        function test() {
-          var element = document.getElementById('block-1');
-          var link = document.createElement('a');
-          var br = document.createElement('br');
-
-          link.innerHTML = 'Got to Google';
-          link.href = 'http://google.com';
-
-          element.appendChild(br);
-          element.appendChild(link);
+        function setTextComment(){
+          text = document.getElementById('ent').value;
+          //alert(text);
         }
 
-
-        function test2() {
-            var element = document.getElementById('block-1');
-            document.body.removeChild(element);
+        function setElementWall(){
+          element_wall = document.getElementById('wall');
         }
+
+        function setElementMarker(){
+          element_marker = document.getElementById(id_iter);
+        }
+
+        function genericId(){
+          return ++id_iter;
+        }
+
+        function createElement() {
+          div_comment = document.createElement('div');
+          div_comment.id = genericId();
+          div_comment.innerHTML = text;
+          div_comment.style.color = color;
+        }
+
+        function addComment(){
+          setTextComment();
+          setElementWall();
+          createElement();
+          element_wall.appendChild(div_comment);
+        }
+
+        function changeColor(){
+          setElementMarker();
+          if (element_marker.style.color == 'black') {
+            color = 'red';
+          }else{
+            color = 'black';
+          }
+          element_marker.style.color = color;
+        }
+
+        // function test() {
+        //   var element = document.getElementById('block-1');
+        //   var link = document.createElement('a');
+        //   var br = document.createElement('br');
+
+        //   console.log(link);
+
+        //   link.innerHTML = 'Got to Google';
+        //   link.href = 'http://google.com';
+
+        //   element.appendChild(br);
+        //   element.appendChild(link);
+        // }
+
+
+        // function test2() {
+        //     var element = document.getElementById('block-1');
+        //     document.body.removeChild(element);
+        // }
 
     </script>
 </html>
